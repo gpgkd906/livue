@@ -3,7 +3,7 @@ import Room from './components/Room.vue'
 </script>
 
 <template>
-  <room msg="Vite + Vue" />
+  <room />
 </template>
 
 <style scoped>
