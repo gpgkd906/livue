@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import Room from './components/Room.vue'
+  import Top from './views/Top.vue'
+  import Meet from './views/Meet.vue'
+  // import Peer from './views/Peer.vue'
+  import { meetingId } from './store'
 </script>
-
 <template>
-  <room msg="Vite + Vue" />
+  <!-- <peer></peer> -->
+  <div v-show="!meetingId">
+    <top></top>
+  </div>
+  <div v-show="meetingId">
+    <meet></meet>
+  </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>
