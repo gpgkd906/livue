@@ -5,16 +5,20 @@ import { createMeeting, joinMeeting, state } from '../store'
 <template>
 <div class="meet">
     <button @click="createMeeting">
-        会議を開始する
+        Start a Meeting
     </button>
-    <p></p>
+    <div class="note">
+        The Host who started a meeting can't leave (including reload the page), or the meeting ID will be invalidated
+    </div>
+    <p class="dividebar"></p>
     <p></p>
     <input type="text" v-model="state.meetingId">
+    <p></p>
     <button @click="joinMeeting">
-        会議を参加する
+        Join a Meeting
     </button>
 
-</div>  
+</div>
 </template>
 
 <style scoped>
@@ -26,13 +30,19 @@ import { createMeeting, joinMeeting, state } from '../store'
         height: 100%;
     }
     input {
-        width: 100%;
-        max-width: 400px;
+        width: 600px;
+        height: 40px;
+        border-radius: 10px;
     }
     button {
         width: 200px;
         height: 50px;
         font-size: 20px;
         border: solid 1px black;
+    }
+    .dividebar {
+        border: solid 0.2rem #5e104a;
+        width: 700px;
+        border-radius: 50px;
     }
 </style>

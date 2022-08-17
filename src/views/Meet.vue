@@ -3,8 +3,9 @@ import { state, localStream, remoteStream } from '../store'
 </script>
 
 <template>
+  Meeting ID: <strong>{{ state.meetingId }}</strong>
+  <p></p>
   <div class="camera-box">
-    会議ID: {{ state.meetingId }}
     <video :srcObject="localStream" autoplay muted></video>
     <video v-show="remoteStream" :srcObject="remoteStream" autoplay></video>
   </div>
@@ -13,10 +14,12 @@ import { state, localStream, remoteStream } from '../store'
 <style scoped>
 .camera-box {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 video {
+  width: 100%;
+  min-width: 30vw;
   border: 1px solid #000;
 }
 </style>
