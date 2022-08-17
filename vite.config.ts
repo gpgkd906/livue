@@ -5,6 +5,13 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: "docs"
+    outDir: "docs",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        assetFileNames: 'app[extname]',
+        entryFileNames: 'app.js'
+      }
+    }
   }
 })
