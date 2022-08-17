@@ -32,4 +32,4 @@ jobs:
       - name: yarn build
         run: yarn build
       - name: push to deploy/web
-        run: git config user.email "gpgkd906@gmail.com" && git config user.name "gpgkd906" && git add -f docs && git commit -m 'add docs' && git push origin main:deploy/web -f
+        run: git config user.email "gpgkd906@gmail.com" && git config user.name "gpgkd906" && git add -f dist && git commit -m 'add dist' && git subtree push --prefix dist origin gh-pages
